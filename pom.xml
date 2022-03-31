@@ -8,11 +8,11 @@
 		<version>2.6.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo-1</artifactId>
+	<groupId>com.miu.mpp_project</groupId>
+	<artifactId>mpp_project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-1</name>
-	<description>demo project</description>
+	<name>mpp_project</name>
+	<description>mpp_project</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

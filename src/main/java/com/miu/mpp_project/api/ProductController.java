@@ -33,11 +33,6 @@ public class ProductController {
 	@PostMapping("/save")
 	public boolean postProduct(@RequestBody Product product ) {
 		try {
-//			Product product1 = new Product("bike", 2000, "https://bike image sample url");
-//			Product product2 = new Product("cars", 50000, "https://cars image sample url");
-//			Product product3 = new Product("laptops", 3000, "https://laptops image sample url");
-//			productService.addProduct(product1);
-//			productService.addProduct(product2);
 			productService.addProduct(product);
 			return true;
 		}catch (Exception e) {
