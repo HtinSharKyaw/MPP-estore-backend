@@ -28,4 +28,13 @@ public class ProductService {
 		productRepository.save(newProduct);
 	}
 
+	public void deleteProduct(Integer id) {
+		boolean isExist = productRepository.existsById(id);
+		if(!isExist) {
+			throw new IllegalStateException(
+					"Product with id" + id + "does not exists");
+		}	
+		productRepository.deleteById(id); 
+	}
+
 }
