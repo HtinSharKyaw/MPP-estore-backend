@@ -3,6 +3,7 @@ package com.miu.mpp_project.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.miu.mpp_project.service.ProductService;
  * @author HtinSharKyaw
  *
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value = "/api/products")
 public class ProductController {
@@ -30,7 +32,10 @@ public class ProductController {
 
 	@GetMapping("/getProducts")
 	public List<Product> getProducts() {
-		return productService.getProducts();
+		
+		List<Product> productList = productService.getProducts();
+		System.out.println(productList.toString());
+		return productList;
 	}
 
 	// ToDo (HtinShar will have to change this code to PostMapping,later)
