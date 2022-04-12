@@ -1,5 +1,8 @@
 package com.miu.mpp_project.security.service;
 
+import com.miu.mpp_project.model.ERole;
+import com.miu.mpp_project.model.Role;
+import com.miu.mpp_project.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,10 +13,16 @@ import org.springframework.transaction.annotation.Transactional;
 import com.miu.mpp_project.model.User;
 import com.miu.mpp_project.repository.UserRepository;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
   @Autowired
   UserRepository userRepository;
+
+  @Autowired
+  RoleRepository roleRepository;
 
   @Override
   @Transactional
@@ -22,6 +31,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 
     return UserDetailsImpl.build(user);
+  }
+
+
+  @Transactional
+  public User save(User user) {
+
+    return userRepository.save(user);
+
   }
 
 }

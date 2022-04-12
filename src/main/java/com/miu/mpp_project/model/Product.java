@@ -19,6 +19,8 @@ public class Product {
 	private String name;
 	private double price;
 	private String imageUrl;
+	private Integer productStock;
+	private Integer productStatus;
 	
 	public Product() {
 
@@ -71,6 +73,21 @@ public class Product {
 		this.imageUrl = imageUrl;
 	}
 
+	public Integer getProductStock() {
+		return productStock;
+	}
+
+	public void setProductStock(Integer productStock) {
+		this.productStock = productStock;
+	}
+
+	public Integer getProductStatus() {
+		return productStatus;
+	}
+
+	public void setProductStatus(Integer productStatus) {
+		this.productStatus = productStatus;
+	}
 
 	@Override
 	public String toString() {
